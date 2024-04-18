@@ -1,0 +1,59 @@
+{% extends ' baseAdmin.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container-scroller">
+        {% include 'shared/_headerAdmin.html.twig' %}
+        <div class="main-panel">
+            <div class="content-wrapper pb-0">
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header pb-0">
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0">Prediction</p>
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+
+                                    <h1>Prediction Result</h1>
+
+                                    <ul>
+                                        {% for prediction in predictions %}
+                                            {% set p=prediction %}
+                                            {% if p==1 %}
+                                                <li style="color:green ">Réussi </li>
+                                            {% else %}
+                                                <li  style="color:red ">échoué </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+
+                                    <hr class="horizontal dark">
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+            </div>
+            <!-- main-panel ends -->
+            {% include 'shared/_footerAdmin.html.twig' %}
+        </div>
+
+        <!-- page-body-wrapper ends -->
+    </div>
+
+{% endblock %}

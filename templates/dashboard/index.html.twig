@@ -1,0 +1,18 @@
+{% extends ' baseAdmin.html.twig' %}
+
+
+{% block body %}
+
+        <div class="container-scroller">
+                {% include 'shared/_headerAdmin.html.twig' %}
+                <div class="main-panel">
+                        <div class="content-wrapper pb-0">
+                                <iframe title="formation" style="margin-left: 25px" width="1100" height="680" src="https://app.powerbi.com/view?r=eyJrIjoiODQzYTg1OGYtYjU5NC00NGZmLWE1ZTktMTI2NWNhNGIyMTMzIiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>                        </div>
+                        <!-- main-panel ends -->
+                        {% include 'shared/_footerAdmin.html.twig' %}
+                </div>
+
+                <!-- page-body-wrapper ends -->
+        </div>
+
+{% endblock %}

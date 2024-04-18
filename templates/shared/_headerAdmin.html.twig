@@ -1,0 +1,62 @@
+{% set currentPath = path(app.request.attributes.get('_route'),
+    app.request.attributes.get('_route_params')) %}
+<body style="background-color: #000">
+<nav class="sidebar sidebar-offcanvas" id="sidebar" style="width: 315px">
+    <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
+        <a class="sidebar-brand brand-logo" href="index.html"><img src="{{ asset('assets/images/Logo_IPAT.png') }}" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini pl-4 pt-4" href="index.html"><img src="{{ asset('assets/images/Logo_IPAT.png') }}" alt="logo" /></a>
+    </div>
+    <ul class="nav">
+        <br>
+        <br>
+        <br>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_dashboard') }} ">
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="{{ path('app_prediction') }}" aria-expanded="false" aria-controls="ui-basic">
+                <i class="mdi mdi-file-document-box menu-icon"></i>
+                <span class="menu-title">Prediction</span>
+                <i class="menu-arrow"></i>
+            </a>
+        </li>
+        <li class="nav-item sidebar-actions">
+            <div class="nav-link">
+                <div class="mt-4">
+                    <ul class="mt-4 pl-0">
+                        <li>
+                            <a class="nav-link" href={{ path('app_logout') }}  >
+                                <i class="mdi mdi-logout menu-icon"></i>
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+    <nav class="navbar col-lg-12 col-12 p-lg-0 fixed-top d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-stretch justify-content-between">
+            <ul class="navbar-nav navbar-nav-right ml-lg-auto">
+                <li class="nav-item nav-profile dropdown border-0">
+                    <a class="nav-link " id="profileDropdown" href="" data-toggle="">
+                        <img class="nav-profile-img mr-2" alt="" src="{{ asset('assets/images/icon_admin.png') }}"  />
+                        <span class="profile-name">{{ app.user.username }}</span>
+                    </a>
+                    <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
+</body>

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DashboardController!{% endblock %}
+
+{% block body %}
+<body>
+
+
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{  asset("assets1/images/undraw_remotely_2j6y.svg") }}" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h3>Sign In</h3>
+                        </div>
+                        <form role="form" method="post">
+                            <div class="form-group first">
+                                {% if error %}
+                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+                                <label for="inputEmail" id="emailLabel" >Email</label>
+                                <input type="text" name="email" class="form-control" value="{{ last_username }}" id="inputEmail">
+
+                            </div>
+                            <div class="form-group last mb-4">
+                                <label for="inputPassword" id="passwordLabel">Password</label>
+                                <input type="password" class="form-control"  name="password" id="inputPassword">
+
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+
+
+                            <input type="submit" value="Log In" class="btn btn-block btn-primary">
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+{% endblock %}
